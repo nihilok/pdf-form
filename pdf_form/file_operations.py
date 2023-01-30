@@ -1,6 +1,6 @@
 import io
 from pathlib import Path
-from typing import Union
+from typing import Union, IO
 
 from pypdf import PdfReader, PdfWriter
 
@@ -8,8 +8,8 @@ from pypdf import PdfReader, PdfWriter
 GenericPdfType = Union[PdfReader, PdfWriter]
 
 
-def load_pdf(filename: Union[str, Path]) -> PdfReader:
-    return PdfReader(filename)
+def load_pdf(file: Union[str, Path, IO[bytes]]) -> PdfReader:
+    return PdfReader(file)
 
 
 def _get_writer_from_pdf_object(pdf: GenericPdfType) -> PdfWriter:

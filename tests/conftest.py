@@ -18,3 +18,12 @@ def valid_pdf_path(test_data_path):
     return test_data_path / "test.pdf"
 
 
+@pytest.fixture
+def simple_form_path(test_data_path):
+    return test_data_path / "simple-form.pdf"
+
+
+@pytest.fixture
+def complex_form_path(test_data_path):
+    return test_data_path / "i-9-paper-version.pdf"
+
